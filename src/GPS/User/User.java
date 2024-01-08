@@ -8,7 +8,7 @@ public class User {
     private final String username;
     private final int age;
     private final String phone;
-    private final String password;
+    private String password;
     private final PlanCollection planCollection;
     private final PlanCollection plansJoined;
 
@@ -44,6 +44,9 @@ public class User {
     }
     public int getId(){
         return this.id;
+    }
+    public void setPassword(String newPassword){
+        this.password = newPassword;
     }
 
     private static final int MIN_AGE = 14;

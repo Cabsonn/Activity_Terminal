@@ -79,6 +79,12 @@ public class SocialManager {
     public Plan closePlan(int idPlan){
         return this.planManager.closePlan(idPlan);
     }
+    public Error checkChangePassword(){
+        return this.userManager.checkChangePassword(this.userManager);
+    }
+    public User changePassword(String password){
+        return this.userManager.changePassword(password, this.userManager);
+    }
 
 
     public static void main(String[] args) {

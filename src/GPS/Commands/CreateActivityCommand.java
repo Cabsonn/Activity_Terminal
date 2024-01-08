@@ -44,7 +44,7 @@ public class CreateActivityCommand extends Command {
         System.out.println("Actividad creada: id:"+activity.getId()+"; nombre: " + activity.getName() + "; descripción: " + activity.getDescription() + "; duración: "
                 + activity.getDuration() + " min; coste: " + activity.getCost() + "€; aforo: " + activity.getCapacity());
     }
-    public void showActivityNoLimit(Activity activity){
+    private void showActivityNoLimit(Activity activity){
         System.out.println("Actividad creada: id:"+activity.getId()+"; nombre: " + activity.getName() + "; descripción: " + activity.getDescription() + "; duración: "
                 + activity.getDuration() + " min; coste: " + activity.getCost() + "€; aforo: sin límite.");
     }

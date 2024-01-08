@@ -24,6 +24,7 @@ public class CLI {
         this.commands.add(new JoinPlanCommand(socialManager,this.prompt));
         this.commands.add(new LeavePlanCommand(socialManager,this.prompt));
         this.commands.add(new ClosePlanCommand(socialManager, this.prompt));
+        this.commands.add(new ChangePasswordCommand(socialManager,this.prompt));
         this.console = new Scanner(System.in);
         this.text = this.commandText();
     }

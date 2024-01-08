@@ -100,6 +100,19 @@ public class UserManager {
         }
         return Error.NOT_LOGGED_USER;
     }
+    public Error checkChangePassword(UserManager userManager){
+        if(!userManager.isUserLoggedIn()){
+            return Error.NOT_LOGGED_USER;
+        }else{
+            return Error.NULL;
+        }
+
+    }
+    public User changePassword(String newPass, UserManager userManager){
+        User user = userManager.getAuthenticated();
+        user.setPassword(newPass);
+        return user;
+    }
 
 }
 

@@ -19,7 +19,7 @@ public class Plan {
     private final ActivityCollection activityCollection;
     private int availableSlots;
     private final UserCollection userCollection;
-    private final int BREAKTIME = 20;
+    public final int BREAKTIME = 20;
 
 
     public Plan(int id, String name, Date date, String meetPlace, int capacity, User creator) {
