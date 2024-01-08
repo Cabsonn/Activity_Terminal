@@ -1,5 +1,7 @@
+package GPS;
+
 public class Prompt {
-    private String path;
+    public String path;
     public Prompt(){
         this.path = "gps> ";
     }

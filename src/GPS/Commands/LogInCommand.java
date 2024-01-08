@@ -1,3 +1,9 @@
+package GPS.Commands;
+
+import GPS.Prompt;
+import GPS.SocialManager;
+import GPS.Error;
+
 public class LogInCommand extends Command {
     private String[] params;
     public LogInCommand(SocialManager socialManager, Prompt prompt) {

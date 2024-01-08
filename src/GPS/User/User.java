@@ -1,3 +1,7 @@
+package GPS.User;
+
+import GPS.Plan.PlanCollection;
+import GPS.Error;
 
 public class User {
     private final int id;
@@ -46,7 +50,7 @@ public class User {
     private static final int MAX_AGE = 100;
 
     public static Error checkAge(int age) {
-        Error error=Error.NULL;
+        Error error= Error.NULL;
         if (age < MIN_AGE || age > MAX_AGE) {
             return Error.AGE_OUT_OF_RANGE;
         }
@@ -56,7 +60,7 @@ public class User {
 
     private static final int MIN_CHARACTERS = 3;
 
-    public static  Error checkPassword(String password) {
+    public static Error checkPassword(String password) {
         Error error = Error.NULL;
         if (password.length() < MIN_CHARACTERS) {
             return Error.INSUFFICIENT_PASSWORD_LENGTH;

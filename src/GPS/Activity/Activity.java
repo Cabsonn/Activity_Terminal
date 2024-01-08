@@ -1,3 +1,5 @@
+package GPS.Activity;
+
 public class Activity {
     private final ActivityType activityType;
     private final int id;
@@ -7,7 +9,7 @@ public class Activity {
     private final int cost;
     private final int capacity;
 
-    public Activity(int id,ActivityType activityType, String name, String description, int duration, int cost, int capacity) {
+    public Activity(int id, ActivityType activityType, String name, String description, int duration, int cost, int capacity) {
         this.id = id;
         this.name = name;
         this.description = description;

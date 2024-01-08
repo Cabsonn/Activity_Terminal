@@ -1,9 +1,16 @@
+package GPS.Commands;
+
+import GPS.Prompt;
+import GPS.SocialManager;
+import GPS.Error;
+import GPS.Plan.Plan;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class CreatePlanCommand extends Command{
+public class CreatePlanCommand extends Command {
     private String[] params;
-    public CreatePlanCommand(SocialManager socialManager,Prompt prompt){
+    public CreatePlanCommand(SocialManager socialManager, Prompt prompt){
         super("create-plan",4, socialManager,prompt);
     }
     private String[] getCommandParts(String command){

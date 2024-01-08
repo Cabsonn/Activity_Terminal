@@ -1,3 +1,9 @@
+package GPS.Managers;
+
+import GPS.User.User;
+import GPS.User.UserCollection;
+import GPS.Error;
+
 public class UserManager {
     private int id;
     private final UserCollection userCollection;

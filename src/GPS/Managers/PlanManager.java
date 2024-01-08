@@ -1,3 +1,10 @@
+package GPS.Managers;
+
+import GPS.Activity.Activity;
+import GPS.Plan.Plan;
+import GPS.Plan.PlanCollection;
+import GPS.Error;
+
 import java.util.Date;
 public class PlanManager {
     private int id;
@@ -17,7 +24,7 @@ public class PlanManager {
         }
         return Error.NULL;
     }
-    public Plan createPlan(String name, Date date, String meetPlace, int capacity,UserManager userManager){
+    public Plan createPlan(String name, Date date, String meetPlace, int capacity, UserManager userManager){
         Plan plan = new Plan(this.id,name,date,meetPlace,capacity,userManager.getAuthenticated());
         this.addPlan(plan);
         userManager.getAuthenticated().getPlansCollection().add(plan);

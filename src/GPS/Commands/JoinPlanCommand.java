@@ -1,7 +1,14 @@
+package GPS.Commands;
+
+import GPS.Plan.Plan;
+import GPS.Prompt;
+import GPS.SocialManager;
+import GPS.Error;
+
 public class JoinPlanCommand extends Command {
     private String[] params;
 
-    public JoinPlanCommand(SocialManager socialManager,Prompt prompt) {
+    public JoinPlanCommand(SocialManager socialManager, Prompt prompt) {
         super("join-event", 1, socialManager,prompt);
     }
     private String[] getCommandParts(String command) {

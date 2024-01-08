@@ -1,3 +1,7 @@
+package GPS;
+
+import GPS.Commands.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

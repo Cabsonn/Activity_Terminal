@@ -1,3 +1,5 @@
+package GPS.Activity;
+
 public class ActivityType {
 
     protected String name;

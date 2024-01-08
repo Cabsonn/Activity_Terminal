@@ -1,7 +1,14 @@
-public class ClosePlanCommand extends Command{
+package GPS.Commands;
+
+import GPS.Plan.Plan;
+import GPS.Prompt;
+import GPS.SocialManager;
+import GPS.Error;
+
+public class ClosePlanCommand extends Command {
     private String[] params;
 
-    public ClosePlanCommand(SocialManager socialManager,Prompt prompt) {
+    public ClosePlanCommand(SocialManager socialManager, Prompt prompt) {
         super("close-plan", 1, socialManager,prompt);
     }
 

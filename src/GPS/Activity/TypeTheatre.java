@@ -1,4 +1,6 @@
-public class TypeTheatre extends ActivityType{
+package GPS.Activity;
+
+public class TypeTheatre extends ActivityType {
     public TypeTheatre(){
         super("Theatre");
         super.youngDiscount = 0.5;

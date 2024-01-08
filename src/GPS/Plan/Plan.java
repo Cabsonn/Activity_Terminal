@@ -1,5 +1,12 @@
+package GPS.Plan;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import GPS.Activity.ActivityCollection;
+import GPS.User.User;
+import GPS.User.UserCollection;
+
 public class Plan {
     private  int cost;
     private  int duration;
@@ -96,4 +103,5 @@ public class Plan {
     }
 
 }
+
 

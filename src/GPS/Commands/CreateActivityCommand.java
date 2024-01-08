@@ -1,7 +1,15 @@
-public class CreateActivityCommand extends Command{
+package GPS.Commands;
+
+import GPS.Activity.Activity;
+import GPS.Activity.ActivityType;
+import GPS.Prompt;
+import GPS.SocialManager;
+import GPS.Error;
+
+public class CreateActivityCommand extends Command {
     private final int CAP_PARAMS = 6;
     private String[] params;
-    public CreateActivityCommand(SocialManager socialManager,Prompt prompt){
+    public CreateActivityCommand(SocialManager socialManager, Prompt prompt){
         super("create-activity",6,socialManager,prompt);
     }
     private String[] getCommandParts(String command){

@@ -1,3 +1,9 @@
+package GPS.Commands;
+
+import GPS.Prompt;
+import GPS.SocialManager;
+import GPS.Error;
+
 public class LogOutCommand extends Command {
     public LogOutCommand(SocialManager socialManager, Prompt prompt) {
         super("logout", 0,socialManager, prompt);

@@ -1,3 +1,5 @@
+package GPS.Activity;
+
 public class TypeGeneric extends ActivityType {
 
     public TypeGeneric(){

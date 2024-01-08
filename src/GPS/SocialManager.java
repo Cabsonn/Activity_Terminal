@@ -1,3 +1,13 @@
+package GPS;
+
+import GPS.Activity.Activity;
+import GPS.Activity.ActivityType;
+import GPS.Managers.ActivityManager;
+import GPS.Plan.Plan;
+import GPS.Managers.PlanManager;
+import GPS.User.User;
+import GPS.Managers.UserManager;
+
 import java.util.Date;
 
 public class SocialManager {
@@ -31,7 +41,7 @@ public class SocialManager {
     public Error checkActivity(){
         return this.activityManager.checkActivity(this.userManager);
     }
-    public Activity createActivity (ActivityType activityType, String name, String description, int duration, int cost,int capacity){
+    public Activity createActivity (ActivityType activityType, String name, String description, int duration, int cost, int capacity){
         return this.activityManager.createActivity(activityType,name,description,duration,cost,capacity);
     }
     public Activity createActivityNoLimit(ActivityType activityType, String name, String description, int duration, int cost){

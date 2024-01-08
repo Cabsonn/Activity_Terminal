@@ -1,3 +1,7 @@
+package GPS.Commands;
+import GPS.SocialManager;
+import GPS.Prompt;
+
 public abstract class Command {
     protected String name;
     protected int expectedParameters;
@@ -5,7 +9,7 @@ public abstract class Command {
     protected SocialManager socialManager;
     protected Prompt prompt;
 
-    public Command (String name, int expectedParameters,SocialManager socialManager, Prompt prompt){
+    public Command (String name, int expectedParameters, SocialManager socialManager, Prompt prompt){
         this.name = name;
         this.expectedParameters = expectedParameters;
         this.socialManager = socialManager;
