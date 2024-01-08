@@ -1,6 +1,6 @@
 package GPS.Activity;
 
-public class ActivityType {
+public abstract class ActivityType {
     protected int age;
 
     protected String name;

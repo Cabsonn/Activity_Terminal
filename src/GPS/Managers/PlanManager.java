@@ -181,7 +181,7 @@ public class PlanManager {
         if(plan.getUserCollection().searchUserName(name)==null){
             return Error.MATCHING_USER;
         }
-        if(plan.getCreator().equals(userManager.getAuthenticated())){
+        if(!plan.getCreator().equals(userManager.getAuthenticated())){
             return Error.INSUFFICIENT_PRIVILEGES;
         }
         return Error.NULL;
