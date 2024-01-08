@@ -1,7 +1,5 @@
 package GPS.Activity;
 
-import GPS.User.User;
-
 public class Activity {
     private final ActivityType activityType;
     private final int id;
