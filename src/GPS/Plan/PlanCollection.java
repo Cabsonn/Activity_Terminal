@@ -30,6 +30,14 @@ public class PlanCollection {
                 }
             }
         }
+        public Plan searchPlanId(int idPlan){
+            for (Plan plan : this.planCollection) {
+                if (idPlan == plan.getId()) {
+                    return plan;
+                }
+            }
+            return null;
+        }
         public void remove(Plan plan) {
             this.planCollection.remove(plan);
         }

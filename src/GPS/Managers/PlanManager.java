@@ -4,6 +4,7 @@ import GPS.Activity.Activity;
 import GPS.Plan.Plan;
 import GPS.Plan.PlanCollection;
 import GPS.Error;
+import GPS.User.User;
 
 import java.util.Date;
 public class PlanManager {
@@ -95,6 +96,7 @@ public class PlanManager {
         }
         return null;
     }
+
     public Error listPlans(String param, UserManager userManager){
         if(userManager.getAuthenticated()==null){
             return Error.NOT_LOGGED_USER;
@@ -166,6 +168,30 @@ public class PlanManager {
             }
         }
         return false;
+    }
+    public Error checkRemoveUser(int planId, String name, UserManager userManager){
+        Plan plan = userManager.getAuthenticated().getPlansCollection().searchPlanId(planId);
+
+        if(userManager.getAuthenticated() == null){
+            return Error.NOT_LOGGED_USER;
+        }
+        if(plan==null){
+            return Error.MATCHING_PLAN;
+        }
+        if(plan.getUserCollection().searchUserName(name)==null){
+            return Error.MATCHING_USER;
+        }
+        if(plan.getCreator().equals(userManager.getAuthenticated())){
+            return Error.INSUFFICIENT_PRIVILEGES;
+        }
+        return Error.NULL;
+    }
+    public User removeUser(int planId, String name, UserManager userManager){
+        Plan plan = userManager.getAuthenticated().getPlansCollection().searchPlanId(planId);
+        User user = plan.getUserCollection().searchUserName(name);
+        plan.getUserCollection().remove(user);
+        return user;
+
     }
 
 

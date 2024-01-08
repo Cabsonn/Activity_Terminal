@@ -4,9 +4,9 @@ import GPS.Prompt;
 import GPS.SocialManager;
 import GPS.Error;
 
-public class LogInCommand extends Command {
+public class LogIn extends Command {
     private String[] params;
-    public LogInCommand(SocialManager socialManager, Prompt prompt) {
+    public LogIn(SocialManager socialManager, Prompt prompt) {
         super("login", 2,socialManager, prompt);
     }
 

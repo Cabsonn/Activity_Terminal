@@ -5,7 +5,7 @@ import GPS.Error;
 
 public class User {
     private final int id;
-    private final String username;
+    private String username;
     private final int age;
     private final String phone;
     private String password;
@@ -48,6 +48,10 @@ public class User {
     public void setPassword(String newPassword){
         this.password = newPassword;
     }
+    public void setUsername(String newUsername){
+        this.username = newUsername;
+    }
+
 
     private static final int MIN_AGE = 14;
     private static final int MAX_AGE = 100;

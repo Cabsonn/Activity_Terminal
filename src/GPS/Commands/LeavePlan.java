@@ -5,10 +5,10 @@ import GPS.Prompt;
 import GPS.SocialManager;
 import GPS.Error;
 
-public class LeavePlanCommand extends Command {
+public class LeavePlan extends Command {
     private String[] params;
 
-    public LeavePlanCommand(SocialManager socialManager, Prompt prompt) {
+    public LeavePlan(SocialManager socialManager, Prompt prompt) {
         super("leave-event", 1, socialManager,prompt);
     }
 

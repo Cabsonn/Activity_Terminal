@@ -5,9 +5,9 @@ import GPS.SocialManager;
 import GPS.User.User;
 import GPS.Error;
 
-public class CreateUserCommand extends Command {
+public class CreateUser extends Command {
     private String[] params;
-    public CreateUserCommand(SocialManager socialManager, Prompt prompt){
+    public CreateUser(SocialManager socialManager, Prompt prompt){
         super("create-user",4,socialManager,prompt);
     }
     private String[] getCommandParts(String command){

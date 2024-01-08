@@ -4,9 +4,9 @@ import GPS.Prompt;
 import GPS.Plan.Plan;
 import GPS.Error;
 
-public class AddActivityPlanCommand extends Command {
+public class AddActivityPlan extends Command {
     private String[] params;
-    public AddActivityPlanCommand(SocialManager socialManager, Prompt prompt){
+    public AddActivityPlan(SocialManager socialManager, Prompt prompt){
         super("add-activity-plan",2, socialManager,prompt);
     }
     private String[] getCommandParts(String command){

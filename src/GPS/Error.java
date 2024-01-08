@@ -16,13 +16,13 @@ public enum Error {
     NO_CORRECT_ORDER("Error: el orden de la lista no se encuentra."),
     FULL_CAPACITY("Error: la capacidad máxima está agotada."),
     MATCHING_DATE("Error: coincidente con otra fecha."),
-
-    MATCHING_PLAN("Error: no plan found to leave"),
+    MATCHING_PLAN("Error: ningún plan encontrado"),
     ALREADY_SUBSCRIBED("Error: ya está realizada la suscripción"),
 
     CLOSED_PLAN("Error: el plan ha sido cerrado."),
 
     ACTIVITY_TYPE("Error: el tipo de actividad especificado no es correcto"),
+    MATCHING_USER("Error: ningún usuario encontrado."),
     NULL;
 
     private String message;

@@ -108,10 +108,23 @@ public class UserManager {
         }
 
     }
-    public User changePassword(String newPass, UserManager userManager){
+    public void changePassword(String newPass, UserManager userManager){
         User user = userManager.getAuthenticated();
         user.setPassword(newPass);
-        return user;
+    }
+    public Error checkChangeUsername(String newName, UserManager userManager){
+        if(!userManager.isUserLoggedIn()){
+            return Error.NOT_LOGGED_USER;
+        }if(!this.checkName(userManager.getAuthenticated(),newName).isNull()){
+            return Error.DUPLICATE_USERNAME;
+        }else{
+            return Error.NULL;
+        }
+
+    }
+    public void changeUsername(String newUsername, UserManager userManager){
+        User user = userManager.getAuthenticated();
+        user.setUsername(newUsername);
     }
 
 }

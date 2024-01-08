@@ -32,6 +32,14 @@ public class UserCollection {
             }
         }
     }
+    public User searchUserName(String name){
+        for (User user : this.userlist) {
+            if (user.getUsername().equals(name)) {
+                return user;
+            }
+        }
+        return null;
+    }
     public void remove(User user){
         this.userlist.remove(user);
     }

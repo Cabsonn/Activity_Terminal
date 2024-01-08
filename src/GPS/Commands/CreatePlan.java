@@ -8,9 +8,9 @@ import GPS.Plan.Plan;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class CreatePlanCommand extends Command {
+public class CreatePlan extends Command {
     private String[] params;
-    public CreatePlanCommand(SocialManager socialManager, Prompt prompt){
+    public CreatePlan(SocialManager socialManager, Prompt prompt){
         super("create-plan",4, socialManager,prompt);
     }
     private String[] getCommandParts(String command){

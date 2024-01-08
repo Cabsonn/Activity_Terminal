@@ -82,8 +82,20 @@ public class SocialManager {
     public Error checkChangePassword(){
         return this.userManager.checkChangePassword(this.userManager);
     }
-    public User changePassword(String password){
-        return this.userManager.changePassword(password, this.userManager);
+    public void changePassword(String password){
+        this.userManager.changePassword(password, this.userManager);
+    }
+    public Error checkRemoveUser(int planId, String name){
+        return this.planManager.checkRemoveUser(planId,name, this.userManager);
+    }
+    public User removeUser(int planId, String name){
+        return this.planManager.removeUser(planId,name,this.userManager);
+    }
+    public Error checkChangeUsername(String newUsername){
+        return this.userManager.checkChangeUsername(newUsername, this.userManager);
+    }
+    public void changeUsername(String newUsername){
+        this.userManager.changeUsername(newUsername, this.userManager);
     }
 
 

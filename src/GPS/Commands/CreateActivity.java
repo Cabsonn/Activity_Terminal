@@ -5,9 +5,9 @@ import GPS.Prompt;
 import GPS.SocialManager;
 import GPS.Error;
 
-public class CreateActivityCommand extends Command {
+public class CreateActivity extends Command {
     private String[] params;
-    public CreateActivityCommand(SocialManager socialManager, Prompt prompt){
+    public CreateActivity(SocialManager socialManager, Prompt prompt){
         super("create-activity",6,socialManager,prompt);
     }
     private String[] getCommandParts(String command){

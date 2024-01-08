@@ -3,10 +3,10 @@ package GPS.Commands;
 import GPS.Prompt;
 import GPS.SocialManager;
 
-public class ListPlansCommand extends Command {
+public class ListPlans extends Command {
     private String[] params;
 
-    public ListPlansCommand(SocialManager socialManager, Prompt prompt) {
+    public ListPlans(SocialManager socialManager, Prompt prompt) {
         super("list-plans", 1, socialManager,prompt);
     }
     private String[] getCommandParts(String command){

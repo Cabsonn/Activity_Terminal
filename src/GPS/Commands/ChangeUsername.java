@@ -4,10 +4,10 @@ import GPS.Error;
 import GPS.Prompt;
 import GPS.SocialManager;
 
-public class ChangePasswordCommand extends Command {
+public class ChangeUsername extends Command {
     private String[] params;
-    public ChangePasswordCommand(SocialManager socialManager, Prompt prompt){
-        super("change-password",1,socialManager,prompt);
+    public ChangeUsername(SocialManager socialManager, Prompt prompt){
+        super("change-username",1,socialManager,prompt);
     }
     private String[] getCommandParts(String command){
         return command.split(":");
@@ -22,19 +22,22 @@ public class ChangePasswordCommand extends Command {
         return params.length == expectedParameters;
     }
     public void execute(){
-        Error error = socialManager.checkChangePassword();
+        Error error = socialManager.checkChangeUsername(this.params[0]);
         if(error.isNull()){
-            socialManager.changePassword(params[0]);
-            this.showNewPassword();
+            socialManager.changeUsername(params[0]);
+            this.showNewUsername();
+            this.updatePath();
         }else{
             error.writeln();
         }
 
     }
-    private void showNewPassword(){
-        System.out.println("Contraseña cambiada con éxito a "+ this.params[0]);
+    private void showNewUsername(){
+        System.out.println("Nombre de usuario cambiado con éxito a "+ this.params[0]);
+    }
+    private void updatePath(){
+        this.prompt.changePath("gps-"+this.params[0]+"> ");
     }
 
 }
-
 

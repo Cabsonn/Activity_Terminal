@@ -22,13 +22,13 @@ public class ActivityManager {
        return Error.NULL;
    }
     public Activity createActivity (String type, String name, String description, int duration, double cost, int capacity, UserManager userManager){
-        Activity activity = new Activity(this.id,new ActivityType(type,userManager.getAuthenticated().getAge()), name, description, duration, cost, capacity, userManager.getAuthenticated());
+        Activity activity = new Activity(this.id,new ActivityType(type,userManager.getAuthenticated().getAge()), name, description, duration, cost, capacity);
         this.activityCollection.add(activity);
         this.id++;
         return activity;
     }
     public Activity createActivityNoLimit(String type, String name, String description, int duration, double cost, UserManager userManager){
-        Activity activity = new Activity(this.id,new ActivityType(type,userManager.getAuthenticated().getAge()), name, description, duration, cost, -1, userManager.getAuthenticated());
+        Activity activity = new Activity(this.id,new ActivityType(type,userManager.getAuthenticated().getAge()), name, description, duration, cost, -1);
         this.activityCollection.add(activity);
         this.id++;
         return activity;

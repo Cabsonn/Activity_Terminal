@@ -8,11 +8,10 @@ public class Activity {
     private final String name;
     private final String description;
     private final int duration;
-    private double cost;
+    private final double cost;
     private final int capacity;
-    private final User creator;
 
-    public Activity(int id, ActivityType activityType, String name, String description, int duration, double cost, int capacity, User creator) {
+    public Activity(int id, ActivityType activityType, String name, String description, int duration, double cost, int capacity) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -20,7 +19,6 @@ public class Activity {
         this.cost = cost - (cost*activityType.discount);
         this.capacity = capacity;
         this.activityType = activityType;
-        this.creator = creator;
 
     }
     public int getId(){

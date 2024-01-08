@@ -5,10 +5,10 @@ import GPS.Prompt;
 import GPS.SocialManager;
 import GPS.Error;
 
-public class ClosePlanCommand extends Command {
+public class ClosePlan extends Command {
     private String[] params;
 
-    public ClosePlanCommand(SocialManager socialManager, Prompt prompt) {
+    public ClosePlan(SocialManager socialManager, Prompt prompt) {
         super("close-plan", 1, socialManager,prompt);
     }
 
