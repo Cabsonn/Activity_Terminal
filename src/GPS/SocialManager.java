@@ -1,7 +1,6 @@
 package GPS;
 
 import GPS.Activity.Activity;
-import GPS.Activity.ActivityType;
 import GPS.Managers.ActivityManager;
 import GPS.Plan.Plan;
 import GPS.Managers.PlanManager;
@@ -38,14 +37,14 @@ public class SocialManager {
     public Error logOut(){
         return this.userManager.logOut();
     }
-    public Error checkActivity(){
-        return this.activityManager.checkActivity(this.userManager);
+    public Error checkActivity(String type){
+        return this.activityManager.checkActivity(type, this.userManager);
     }
-    public Activity createActivity (ActivityType activityType, String name, String description, int duration, int cost, int capacity){
-        return this.activityManager.createActivity(activityType,name,description,duration,cost,capacity);
+    public Activity createActivity (String type, String name, String description, int duration, double cost, int capacity){
+        return this.activityManager.createActivity(type,name,description,duration,cost,capacity,this.userManager);
     }
-    public Activity createActivityNoLimit(ActivityType activityType, String name, String description, int duration, int cost){
-        return this.activityManager.createActivityNoLimit(activityType,name,description,duration,cost);
+    public Activity createActivityNoLimit(String type, String name, String description, int duration, double cost){
+        return this.activityManager.createActivityNoLimit(type,name,description,duration,cost,this.userManager);
     }
     public Error checkCreatePlan(){
         return this.planManager.checkCreatePlan(this.userManager);

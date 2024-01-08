@@ -83,6 +83,7 @@ public class PlanManager {
     }
     public Plan closePlan(int idPlan){
         Plan plan = this.searchPlanId(idPlan);
+        assert plan != null;
         plan.setNullCreator();
         return plan;
     }

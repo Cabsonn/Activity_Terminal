@@ -8,7 +8,7 @@ import GPS.User.User;
 import GPS.User.UserCollection;
 
 public class Plan {
-    private  int cost;
+    private  double cost;
     private  int duration;
     private final int id;
     private final String name;
@@ -65,7 +65,7 @@ public class Plan {
     public int getDuration(){
         return this.duration;
     }
-    public int getCost(){
+    public double getCost(){
         return this.cost;
     }
     public void setCapacity(int capacity){
@@ -88,7 +88,7 @@ public class Plan {
         this.availableSlots++;
     }
 
-    public void setCost(int cost){
+    public void setCost(double cost){
         this.cost+=cost;
     }
     public String dateToString(){

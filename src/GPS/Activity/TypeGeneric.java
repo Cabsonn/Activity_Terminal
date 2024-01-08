@@ -1,12 +1,8 @@
 package GPS.Activity;
 
 public class TypeGeneric extends ActivityType {
-
-    public TypeGeneric(){
-        super("Generic");
-        super.youngDiscount = 1;
-        super.pensionerDiscount = 1;
+    public TypeGeneric(int age) {
+        super("Cinema", age);
+        super.discount = 0;
     }
-
-
 }

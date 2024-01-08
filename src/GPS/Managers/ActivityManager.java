@@ -12,20 +12,23 @@ public class ActivityManager {
         this.id = 1;
         this.activityCollection = new ActivityCollection();
     }
-   public Error checkActivity(UserManager userManager){
+   public Error checkActivity(String type, UserManager userManager){
        if(userManager.getAuthenticated()==null){
            return Error.NOT_LOGGED_USER;
        }
+       if(!type.equalsIgnoreCase("Generic") && !type.equalsIgnoreCase("Theatre") && !type.equalsIgnoreCase("Cinema")){
+           return Error.ACTIVITY_TYPE;
+       }
        return Error.NULL;
    }
-    public Activity createActivity (ActivityType activityType, String name, String description, int duration, int cost, int capacity){
-        Activity activity = new Activity(this.id,activityType, name, description, duration, cost, capacity);
+    public Activity createActivity (String type, String name, String description, int duration, double cost, int capacity, UserManager userManager){
+        Activity activity = new Activity(this.id,new ActivityType(type,userManager.getAuthenticated().getAge()), name, description, duration, cost, capacity, userManager.getAuthenticated());
         this.activityCollection.add(activity);
         this.id++;
         return activity;
     }
-    public Activity createActivityNoLimit(ActivityType activityType, String name, String description, int duration, int cost){
-        Activity activity = new Activity(this.id,activityType, name, description, duration, cost, -1);
+    public Activity createActivityNoLimit(String type, String name, String description, int duration, double cost, UserManager userManager){
+        Activity activity = new Activity(this.id,new ActivityType(type,userManager.getAuthenticated().getAge()), name, description, duration, cost, -1, userManager.getAuthenticated());
         this.activityCollection.add(activity);
         this.id++;
         return activity;

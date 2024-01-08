@@ -21,6 +21,8 @@ public enum Error {
     ALREADY_SUBSCRIBED("Error: ya está realizada la suscripción"),
 
     CLOSED_PLAN("Error: el plan ha sido cerrado."),
+
+    ACTIVITY_TYPE("Error: el tipo de actividad especificado no es correcto"),
     NULL;
 
     private String message;

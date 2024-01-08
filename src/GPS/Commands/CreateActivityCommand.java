@@ -1,13 +1,11 @@
 package GPS.Commands;
 
 import GPS.Activity.Activity;
-import GPS.Activity.ActivityType;
 import GPS.Prompt;
 import GPS.SocialManager;
 import GPS.Error;
 
 public class CreateActivityCommand extends Command {
-    private final int CAP_PARAMS = 6;
     private String[] params;
     public CreateActivityCommand(SocialManager socialManager, Prompt prompt){
         super("create-activity",6,socialManager,prompt);
@@ -24,20 +22,17 @@ public class CreateActivityCommand extends Command {
         this.params = arguments.split(";");
         return this.expectedParameters - 1 == this.params.length || this.expectedParameters == this.params.length;
     }
-    public ActivityType activityType(){
-        return new ActivityType(this.params[0]);
-    }
     public void execute(){
-        Error error = this.socialManager.checkActivity();
+        Error error = this.socialManager.checkActivity(params[0]);
         Activity activity;
         if(error.isNull()){
-            if(this.params.length == this.CAP_PARAMS){
-                activity = socialManager.createActivity(this.activityType(),this.params[1],this.params[2],
+            if(this.params.length == this.expectedParameters){
+                activity = socialManager.createActivity(params[0],this.params[1],this.params[2],
                         Integer.parseInt(this.params[3]),Integer.parseInt(this.params[4]),
                         Integer.parseInt(this.params[5]));
                 this.showActivity(activity);
             }else{
-                activity = socialManager.createActivityNoLimit(this.activityType(),this.params[1],this.params[2],
+                activity = socialManager.createActivityNoLimit(params[0],this.params[1],this.params[2],
                         Integer.parseInt(this.params[3]),Integer.parseInt(this.params[4]));
                 this.showActivityNoLimit(activity);
             }

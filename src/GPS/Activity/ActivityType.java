@@ -1,12 +1,14 @@
 package GPS.Activity;
 
 public class ActivityType {
+    protected int age;
 
     protected String name;
-    protected double youngDiscount;
-    protected double pensionerDiscount;
+    public double discount;
 
-    public ActivityType(String name){
+    public ActivityType(String name, int age){
         this.name = name;
+        this.age = age;
+        this.discount = 0;
     }
 }
